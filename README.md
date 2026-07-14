@@ -26,3 +26,9 @@ python obsidian/build_theme.py
 ```
 
 其他平台的主题为手动适配版本，无需编译。
+
+---
+
+## 🙏 致谢 (Acknowledgments)
+
+本项目的 Obsidian `Telcat` 主题基于 [Phycat Theme](https://github.com/sumruler/obsidian-theme-phycat) (作者: sumruler) 进行二次开发与定制，感谢原作者优秀的开源工作。
