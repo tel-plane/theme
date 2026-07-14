@@ -56,6 +56,7 @@
 ### 2. 详细配置
 1.  启用本主题后，建议安装社区插件 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)。
 2.  打开 Style Settings，在顶级菜单 Telcat Settings 中定制配色、布局、字间距、行高与标题对齐方式等。
+
 ---
 
 ## 🙏 致谢
