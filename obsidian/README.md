@@ -10,13 +10,13 @@
 
 ### 亮色模式 (Light)
 
-*   [Tokyonight Day (默认)](https://github.com) — 东京夜色白昼风格，冷灰背景搭配深蓝灰正文。
-*   [Github Light](https://github.com) — 经典 GitHub 亮色风格，白色背景与高辨识度语法高亮。
+*   **Tokyonight Day (默认)** — 东京夜色白昼风格，冷灰背景搭配深蓝灰正文。
+*   **Github Light** — 经典 GitHub 亮色风格，白色背景与高辨识度语法高亮。
 
 ### 暗色模式 (Dark)
 
-*   [Tokyonight Storm (默认)](https://github.com) — 东京夜色风暴风格，深蓝灰背景搭配霓虹蓝/紫高亮。
-*   [Github Dark](https://github.com) — 经典 GitHub 暗色风格，深灰黑背景，高对比度不易疲劳。
+*   **Tokyonight Storm (默认)** — 东京夜色风暴风格，深蓝灰背景搭配霓虹蓝/紫高亮。
+*   **Github Dark** — 经典 GitHub 暗色风格，深灰黑背景，高对比度不易疲劳。
 
 ---
 
