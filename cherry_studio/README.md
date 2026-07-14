@@ -6,6 +6,8 @@
 
 ## 🌟 当前可用的主题样式
 
+*   `Tokyonight.css` — 本仓库原创开发的主题样式。完整移植了 Obsidian 主题的高级 Markdown 渲染特效：双栏标题装饰、星芒 ✦ 分割线、引用块灯泡图标、卡片 hover、KaTeX 公式微调等。
+
 本目录除了原创的 `Tokyonight.css`，还存有其他 `.css` 主题文件（例如 `Claude.css`、`Miku-more.css`、`Modern_Workspace.css` 等）作为备选参考。你可以挑一个自己喜欢的，把它复制粘贴到 Cherry Studio 的自定义 CSS 输入框里切换使用。
 
 ---
