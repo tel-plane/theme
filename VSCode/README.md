@@ -17,13 +17,17 @@
 
 请按照以下步骤在 VSCode 的 Markdown Preview Enhanced 中配置并使用该主题：
 
-1. **打开 MPE 配置目录**：
+1. **打开自定义样式配置文件**：
    * 在 VSCode 中，按 `Ctrl+Shift+P` (Windows) 或 `Cmd+Shift+P` (Mac) 打开命令面板。
-   * 输入 `Markdown Preview Enhanced: Customize CSS` 并回车，这会打开 MPE 的全局 `style.less`。
-   * 或者，你可以直接打开 MPE 的全局配置文件夹（通常位于 `~/.mpe/`）。
-2. **替换样式与配置**：
-   * 将本目录 `style.less` 里的内容复制，粘贴并覆盖到 MPE 开启的 `style.less` 中。
-   * 将 `config.js`、`parser.js`、`head.html` 的内容对应复制到 MPE 配置文件夹中（或按 MPE 指引合并配置）。
-3. **享受预览**：
+   * 输入 `Markdown Preview Enhanced: Customize CSS`，在下拉选项中务必勾选或选择带有 **"(Global)" 全局** 标志的项（中文显示为 `MPE:自定义样式 (全局)`）。该命令会直接打开一个全局共享的 `style.less` 文件。
+   * **MPE 全局配置文件夹路径参考**：
+       * Windows: `~/.crossnote/`
+       * Linux / WSL: `~/.local/state/crossnote/`
+       * 如果你想修改 `config.js`、`head.html`、`parser.js` 等配置，可以直接在上述目录中找到对应的同名文件进行局部调整；无需手动复制覆盖，复用 MPE 的现存空文件即可。
+
+2. **替换样式内容**：
+   * 复制本目录下 `style.less` 的全部内容，直接粘贴并覆盖到上一步打开的全局 `style.less` 文件中即可。
+
+3. **预览**：
    * 在 VSCode 中打开任何 Markdown 文件。
    * 点击右上角的 MPE 预览按钮即可享受高对比度的 Tokyonight 风格预览。

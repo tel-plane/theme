@@ -19,8 +19,8 @@
    打开本目录下的 `Tokyonight.css`，复制里面的全部内容。
 2. **在 Cherry Studio 中配置**：
    * 打开 Cherry Studio 客户端。
-   * 进入 **设置 (Settings)** -> **外观设置 (Appearance)**。
-   * 找到 **自定义 CSS (Custom CSS)** 区域。
+   * 进入 **设置 (Settings)** -> **显示设置 (Display Settings)**。
+   * 滚到最下面找到 **自定义 CSS (Custom CSS)** 输入框。
    * 将复制的 CSS 代码粘贴进去。
 3. **保存并应用**：
    * 点击保存，Cherry Studio 会立即重新加载样式。

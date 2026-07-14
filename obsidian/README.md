@@ -49,9 +49,9 @@
 
 ## ⚙️ 安装与启用
 
-### 1. 安装主题文件
+### 1. 安装与启用主题
 *   将本目录下的 `theme.css` 与 `manifest.json` 复制到你的 Obsidian 库对应的主题文件夹下（路径通常为：`.obsidian/themes/Telcat/`，如果不存在该文件夹请手动创建）。
-*   或者你也可以在构建完 `theme.css` 后直接在 Obsidian 内部的**外观设置**中切换并启用它。
+*   复制完成后，**还得在 Obsidian 内部执行启用操作**：进入 `设置 -> 外观 -> 主题管理`，你可以看到 `Telcat` 主题出现在列表中，点击旁边的启用按钮使其生效。注意仅仅复制文件是不够的，必须在此处手动激活它。
 
 ### 2. 详细配置
 1.  启用本主题后，建议安装社区插件 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)。
