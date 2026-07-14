@@ -47,11 +47,15 @@
 
 ---
 
-## ⚙️ 安装与配置
+## ⚙️ 安装与启用
 
-1.  下载并启用本主题后，建议安装社区插件 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)。
+### 1. 安装主题文件
+*   将本目录下的 `theme.css` 与 `manifest.json` 复制到你的 Obsidian 库对应的主题文件夹下（路径通常为：`.obsidian/themes/Telcat/`，如果不存在该文件夹请手动创建）。
+*   或者你也可以在构建完 `theme.css` 后直接在 Obsidian 内部的**外观设置**中切换并启用它。
+
+### 2. 详细配置
+1.  启用本主题后，建议安装社区插件 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)。
 2.  打开 Style Settings，在顶级菜单 Telcat Settings 中定制配色、布局、字间距、行高与标题对齐方式等。
-
 ---
 
 ## 🙏 致谢
