@@ -1,6 +1,6 @@
 # 🐱 Telcat 主题
 
-**Telcat** 是一款优雅、可定制的 Obsidian 玻璃拟态主题，由 TelPlane 基于 [Phycat](https://github.com/sumruler/obsidian-theme-phycat) 修改定制。
+**Telcat** 是一款优雅、可定制的 Obsidian 玻璃拟态主题，基于 [Phycat](https://github.com/sumruler/obsidian-theme-phycat) 修改定制。
 
 ---
 
