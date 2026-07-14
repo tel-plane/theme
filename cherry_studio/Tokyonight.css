@@ -1,0 +1,1812 @@
+/*
+================================================================================
+🎨 Tokyonight Theme for Cherry Studio
+================================================================================
+设计风格：东京夜色 Tokyonight Storm (Dark) / Tokyonight Day (Light)
+本主题包含完整的 Obsidian 级 Markdown 渲染特效与样式。
+================================================================================
+*/
+
+@property --em-stitch-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(187, 154, 243, 0.5);
+}
+
+/* ==============================================================================
+   1. CSS Variables - Dark (Tokyonight Storm) & Light (Tokyonight Day)
+   ============================================================================== */
+
+/* --- Dark Mode (Tokyonight Storm) --- */
+body[theme-mode="dark"] {
+  /* Heading decoration icons (dot matrix SVG) */
+  --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
+  --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
+
+  /* Palette */
+  --bg-color: #24283b;
+  --text-color: #c0caf5;
+  --text-color-secondary: #a9b1d6;
+  --border-color: #3b4261;
+  --primary-color: #7aa2f7;
+  --secondary-color: #bb9af3;
+  --accent-color: #7dcfff;
+  --glow-color: rgba(122, 162, 247, 0.6);
+  --hover-background-color: rgb(122, 162, 247);
+  --select-text-bg-color: rgba(122, 162, 247, 0.3);
+  --link-color: #ff9e64;
+  --link-hover-color: #7dcfff;
+  --h1-underline-color: var(--primary-color);
+  --h2-bg-image: radial-gradient(ellipse at center bottom, rgba(122, 162, 247, 0.15), transparent 70%);
+  --h2-bg-image-hover: radial-gradient(ellipse at center bottom, rgba(122, 162, 247, 0.25), transparent 60%);
+
+  /* Derived variables */
+  --glow-shadow-text: 0 0 8px rgba(122, 162, 247, 0.6);
+  --glow-shadow-box: 0 0 8px rgba(122, 162, 247, 0.6);
+  --code-background: #1f2335;
+  --code-normal: #c0caf5;
+  --table-bg: rgba(255, 255, 255, 0.02);
+  --table-border-inner: rgba(255, 255, 255, 0.05);
+  --table-row-hover-bg: rgba(255, 255, 255, 0.03);
+  --table-th-bg: rgba(122, 162, 247, 0.05);
+  --table-th-border: rgba(122, 162, 247, 0.15);
+  --table-cell-hover-bg: rgba(122, 162, 247, 0.15);
+  --table-cell-hover-text: #ffffff;
+  --table-border-radius: 8px;
+  --checkbox-bg-unchecked: rgba(255, 255, 255, 0.05);
+  --checkbox-border-unchecked: rgba(255, 255, 255, 0.3);
+  --checkbox-bg-checked: rgba(122, 162, 247, 0.2);
+  --checkbox-shadow-checked: 0 0 8px #7aa2f7;
+  --checkbox-size: 1.25rem;
+  --checkmark-color: #ffffff;
+  --blockquote-line-height: 1.6;
+  --table-line-height: 1.8;
+  --code-line-height: 1.6;
+  --code-radius: 8px;
+  --code-size: 0.95rem;
+  --letter-spacing: 1px;
+  --word-spacing: 2px;
+  --line-height-customize: 1.6;
+  --text-muted: #565f89;
+  --text-normal: #c0caf5;
+  --list-hover-color: #7dcfff;
+
+  /* Cherry Studio Specific Layout Colors (Storm Dark Mode) */
+  --color-background: #24283b;
+  --color-background-soft: #1e2235;
+  --color-background-mute: #1a1e30;
+  --color-text-1: #c0caf5;
+  --color-text-2: #a9b1d6;
+  --color-text-3: #565f89;
+  --color-primary: #7aa2f7;
+  --color-border: #3b4261;
+  --color-border-soft: #2e324a;
+  --color-border-mute: #1f2335;
+  --color-code-background: #1f2335;
+  --color-hover: rgba(122, 162, 247, 0.15);
+  --color-active: rgba(122, 162, 247, 0.3);
+  --navbar-background: #1e2235;
+  --chat-background: #24283b;
+  --chat-background-user: #7aa2f7;
+  --chat-background-assistant: #1f2335;
+  --chat-text-user: #ffffff;
+  --em-stitch-color: rgba(187, 154, 243, 0.5);
+}
+
+/* --- Light Mode (Tokyonight Day) --- */
+body[theme-mode="light"] {
+  /* Heading decoration icons (dot matrix SVG) */
+  --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
+  --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
+
+  /* Palette */
+  --bg-color: #e1e2e7;
+  --text-color: #343b58;
+  --text-color-secondary: #687089;
+  --border-color: rgba(56, 94, 242, 0.4);
+  --primary-color: #385ef2;
+  --secondary-color: #9854f1;
+  --accent-color: #007197;
+  --glow-color: rgba(56, 94, 242, 0.5);
+  --hover-background-color: rgb(56, 94, 242);
+  --select-text-bg-color: rgba(56, 94, 242, 0.25);
+  --link-color: #b15c00;
+  --link-hover-color: #007197;
+  --h1-underline-color: var(--primary-color);
+  --h2-bg-image: radial-gradient(ellipse at center bottom, rgba(56, 94, 242, 0.15), transparent 70%);
+  --h2-bg-image-hover: radial-gradient(ellipse at center bottom, rgba(56, 94, 242, 0.25), transparent 60%);
+
+  /* Derived variables */
+  --glow-shadow-text: 0 0 5px rgba(56, 94, 242, 0.5);
+  --glow-shadow-box: 0 0 5px rgba(56, 94, 242, 0.5);
+  --code-background: #e9eaf0;
+  --code-normal: #343b58;
+  --table-bg: rgba(255, 255, 255, 0.4);
+  --table-border-inner: rgba(0, 0, 0, 0.06);
+  --table-row-hover-bg: rgba(0, 0, 0, 0.03);
+  --table-th-bg: rgba(56, 94, 242, 0.1);
+  --table-th-border: rgba(56, 94, 242, 0.2);
+  --table-cell-hover-bg: rgba(56, 94, 242, 0.2);
+  --table-cell-hover-text: #385ef2;
+  --table-border-radius: 8px;
+  --checkbox-bg-unchecked: rgba(56, 94, 242, 0.1);
+  --checkbox-border-unchecked: rgba(56, 94, 242, 0.5);
+  --checkbox-bg-checked: var(--primary-color);
+  --checkbox-shadow-checked: 0 2px 5px rgba(56, 94, 242, 0.4);
+  --checkbox-size: 1.25rem;
+  --checkmark-color: #ffffff;
+  --blockquote-line-height: 1.6;
+  --table-line-height: 1.8;
+  --code-line-height: 1.6;
+  --code-radius: 8px;
+  --code-size: 0.95rem;
+  --letter-spacing: 1px;
+  --word-spacing: 2px;
+  --line-height-customize: 1.6;
+  --text-muted: #687089;
+  --text-normal: #343b58;
+  --list-hover-color: #1689a0;
+
+  /* Cherry Studio Specific Layout Colors (Day Light Mode) */
+  --color-background: #e1e2e7;
+  --color-background-soft: #d3d4db;
+  --color-background-mute: #c6c7cf;
+  --color-active: rgba(56, 94, 242, 0.3);
+  --color-text-2: #687089;
+  --color-text-3: #848cb5;
+  --color-primary: #385ef2;
+  --color-border: rgba(56, 94, 242, 0.4);
+  --color-border-soft: rgba(56, 94, 242, 0.2);
+  --color-border-mute: rgba(56, 94, 242, 0.1);
+  --color-code-background: #e9eaf0;
+  --color-hover: rgba(56, 94, 242, 0.15);
+  --color-active: rgba(56, 94, 242, 0.3);
+  --navbar-background: #d3d4db;
+  --chat-background: #e1e2e7;
+  --chat-background-user: #385ef2;
+  --chat-background-assistant: #e9eaf0;
+  --chat-text-user: #ffffff;
+  --em-stitch-color: rgba(152, 84, 241, 0.4);
+}
+
+/* ==============================================================================
+   2. Main Layout Background Alignment
+   ============================================================================== */
+#content-container,
+#content-container #messages {
+  background-color: var(--color-background) !important;
+}
+
+/* ==============================================================================
+   3. Markdown Document Styling (LXGW ZhenKai GB for regular text)
+   ============================================================================== */
+.markdown,
+.tiptap {
+  font-family: "LXGW ZhenKai GB", sans-serif !important;
+  color: var(--text-color) !important;
+  line-height: var(--line-height-customize) !important;
+  letter-spacing: var(--letter-spacing) !important;
+}
+
+.markdown p,
+.tiptap p {
+  color: var(--text-color-secondary) !important;
+  word-spacing: var(--word-spacing) !important;
+}
+
+/* ==============================================================================
+   4. Headings H1–H6
+   ============================================================================== */
+.markdown h1, .tiptap h1,
+.markdown h2, .tiptap h2,
+.markdown h3, .tiptap h3,
+.markdown h4, .tiptap h4,
+.markdown h5, .tiptap h5,
+.markdown h6, .tiptap h6 {
+  color: var(--text-color) !important;
+  font-weight: bold !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  margin-block-start: 0.5rem !important;
+  margin-block-end: 0.5rem !important;
+}
+
+/* --- H1: Double-pillar decoration --- */
+.markdown h1, .tiptap h1 {
+  font-size: 1.7em !important;
+  text-align: left !important;
+  padding-left: 32px !important;
+  padding-bottom: 0 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.markdown h1::before, .tiptap h1::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: -6px !important;
+  left: 2px !important;
+  width: 10px !important;
+  height: 22px !important;
+  border-radius: 6px !important;
+  background-color: var(--secondary-color) !important;
+  opacity: 0.6 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 0 !important;
+}
+
+.markdown h1::after, .tiptap h1::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin-top: 4px !important;
+  left: 8px !important;
+  width: 10px !important;
+  height: 22px !important;
+  border-radius: 6px !important;
+  background: var(--primary-color) !important;
+  mix-blend-mode: screen !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.05s !important;
+  z-index: 1 !important;
+}
+
+.markdown h1:hover, .tiptap h1:hover {
+  color: var(--primary-color) !important;
+  text-shadow: var(--glow-shadow-text) !important;
+  transform: translateX(4px) !important;
+}
+
+.markdown h1:hover::before, .tiptap h1:hover::before {
+  height: 32px !important;
+  margin-top: 0 !important;
+  left: 4px !important;
+  width: 6px !important;
+  opacity: 0.4 !important;
+}
+
+.markdown h1:hover::after, .tiptap h1:hover::after {
+  height: 26px !important;
+  margin-top: 0 !important;
+  left: 12px !important;
+  width: 6px !important;
+  box-shadow: 0 0 15px var(--primary-color) !important;
+}
+
+/* --- H2: Twin Pillars --- */
+.markdown h2, .tiptap h2 {
+  font-size: 1.6em !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  position: relative !important;
+  padding-left: 20px !important;
+  padding-right: 0 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.markdown h2::before, .tiptap h2::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: auto !important;
+  margin-top: 0.2em !important;
+  height: 1em !important;
+  width: 5px !important;
+  background-color: var(--primary-color) !important;
+  border-radius: 4px !important;
+  opacity: 0.8 !important;
+  box-shadow: 0 0 8px rgba(122, 162, 247, 0.5) !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.markdown h2::after, .tiptap h2::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 8px !important;
+  top: auto !important;
+  margin-top: 0.4em !important;
+  height: 0.6em !important;
+  width: 2px !important;
+  background-color: var(--secondary-color) !important;
+  border-radius: 2px !important;
+  opacity: 0.6 !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0.05s !important;
+}
+
+.markdown h2:hover, .tiptap h2:hover {
+  color: var(--primary-color) !important;
+  text-shadow: var(--glow-shadow-text) !important;
+  transform: translateX(4px) !important;
+}
+
+.markdown h2:hover::before, .tiptap h2:hover::before {
+  top: auto !important;
+  margin-top: 0em !important;
+  height: 1.4em !important;
+  opacity: 0.5 !important;
+}
+
+.markdown h2:hover::after, .tiptap h2:hover::after {
+  top: auto !important;
+  margin-top: 0.15em !important;
+  height: 1.1em !important;
+  width: 4px !important;
+  opacity: 1 !important;
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 0 12px var(--primary-color) !important;
+}
+
+/* --- H3: Vertical lines --- */
+.markdown h3, .tiptap h3 {
+  font-size: 1.5em !important;
+  padding-left: 15px !important;
+  display: block !important;
+  transition: padding-left 0.3s ease, color 0.3s ease, transform 0.3s ease !important;
+}
+
+.markdown h3::before, .tiptap h3::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 4px !important;
+  height: 1.3rem !important;
+  background: var(--primary-color) !important;
+  border-radius: 2px !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  opacity: 0.8 !important;
+}
+
+.markdown h3:hover, .tiptap h3:hover {
+  color: var(--primary-color) !important;
+  padding-left: 20px !important;
+  text-shadow: var(--glow-shadow-text) !important;
+  transform: translateX(4px) !important;
+}
+
+.markdown h3:hover::before, .tiptap h3:hover::before {
+  height: 24px !important;
+  opacity: 1 !important;
+  box-shadow: var(--glow-shadow-box) !important;
+}
+
+/* --- H4: Filled circles --- */
+.markdown h4, .tiptap h4 {
+  font-size: 1.4em !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.markdown h4::before, .tiptap h4::before {
+  content: "" !important;
+  margin-right: 10px !important;
+  display: inline-block !important;
+  background-color: var(--primary-color) !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.markdown h4:hover, .tiptap h4:hover {
+  color: var(--primary-color) !important;
+  text-shadow: var(--glow-shadow-text) !important;
+  transform: translateX(4px) !important;
+}
+
+.markdown h4:hover::before, .tiptap h4:hover::before {
+  transform: scale(1.2) !important;
+  box-shadow: var(--glow-shadow-box) !important;
+}
+
+/* --- H5: Hollow circles --- */
+.markdown h5, .tiptap h5 {
+  font-size: 1.3em !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.markdown h5::before, .tiptap h5::before {
+  content: "" !important;
+  margin-right: 10px !important;
+  display: inline-block !important;
+  background-color: transparent !important;
+  border: 1.5px solid var(--primary-color) !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.markdown h5:hover, .tiptap h5:hover {
+  color: var(--primary-color) !important;
+  text-shadow: var(--glow-shadow-text) !important;
+  transform: translateX(4px) !important;
+}
+
+.markdown h5:hover::before, .tiptap h5:hover::before {
+  background-color: transparent !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: var(--glow-shadow-box) !important;
+  transform: scale(1.2) !important;
+}
+
+/* --- H6: Short horizontal lines --- */
+.markdown h6, .tiptap h6 {
+  font-size: 1.2em !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.markdown h6::before, .tiptap h6::before {
+  content: "-" !important;
+  color: var(--primary-color) !important;
+  margin-right: 11px !important;
+  display: inline-block !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+}
+
+.markdown h6:hover, .tiptap h6:hover {
+  color: var(--primary-color) !important;
+  text-shadow: var(--glow-shadow-text) !important;
+  transform: translateX(4px) !important;
+}
+
+.markdown h6:hover::before, .tiptap h6:hover::before {
+  text-shadow: var(--glow-shadow-text) !important;
+  transform: scaleX(1.5) !important;
+}
+
+/* --- H3–H6 dot matrix suffix icons --- */
+.markdown h3::after, .tiptap h3::after,
+.markdown h4::after, .tiptap h4::after,
+.markdown h5::after, .tiptap h5::after,
+.markdown h6::after, .tiptap h6::after {
+  content: " " !important;
+  display: inline-block !important;
+  height: 1.2em !important;
+  width: 1.2em !important;
+  vertical-align: top !important;
+  margin-left: 8px !important;
+  background-color: var(--primary-color) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: contain !important;
+  opacity: 0.5 !important;
+}
+
+.markdown h3::after, .tiptap h3::after {
+  -webkit-mask-image: var(--h3-icon-shape) !important;
+  mask-image: var(--h3-icon-shape) !important;
+}
+
+.markdown h4::after, .tiptap h4::after {
+  -webkit-mask-image: var(--h4-icon-shape) !important;
+  mask-image: var(--h4-icon-shape) !important;
+}
+
+.markdown h5::after, .tiptap h5::after {
+  -webkit-mask-image: var(--h5-icon-shape) !important;
+  mask-image: var(--h5-icon-shape) !important;
+}
+
+.markdown h6::after, .tiptap h6::after {
+  -webkit-mask-image: var(--h6-icon-shape) !important;
+  mask-image: var(--h6-icon-shape) !important;
+}
+
+/* ==============================================================================
+   5. Inline Code (锁定 ComicShannsMono Nerd Font + 中文 LXGW ZhenKai GB)
+   ============================================================================== */
+.markdown code:not(pre code),
+.tiptap code:not(pre code) {
+  font-family: "ComicShannsMono Nerd Font", "LXGW ZhenKai GB", monospace !important;
+  letter-spacing: 0.5px !important;
+  background-color: rgba(122, 162, 247, 0.1) !important;
+  color: var(--primary-color) !important;
+  border: 1px solid rgba(122, 162, 247, 0.15) !important;
+  padding: 2px 6px !important;
+  margin: 0 2px !important;
+  border-radius: 6px !important;
+  vertical-align: middle !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  -webkit-box-decoration-break: clone !important;
+  box-decoration-break: clone !important;
+}
+
+.markdown code:not(pre code):hover,
+.tiptap code:not(pre code):hover {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 15px rgba(122, 162, 247, 0.4) !important;
+  transform: scale(1.05) !important;
+  text-decoration: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ==============================================================================
+   6. Code Blocks (Red/Yellow/Green traffic dots + Hover border glow)
+   ============================================================================== */
+.markdown pre,
+.tiptap pre {
+  position: relative !important;
+  background-color: var(--code-background) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--code-radius) !important;
+  padding-top: 38px !important;
+  padding-bottom: 12px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 20px 0 !important;
+  overflow: hidden !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.markdown pre:hover,
+.tiptap pre:hover {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 12px rgba(122, 162, 247, 0.15) !important;
+}
+
+/* Code block header — Mac-style traffic light dots */
+.markdown pre::before,
+.tiptap pre::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 32px !important;
+  background-color: rgba(122, 162, 247, 0.04) !important;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsMDYpIi8+Cjwvc3ZnPg==) !important;
+  background-repeat: no-repeat !important;
+  background-size: 54px !important;
+  background-position: 12px center !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  border-radius: 8px 8px 0 0 !important;
+  z-index: 5 !important;
+}
+
+.markdown pre:hover::before,
+.tiptap pre:hover::before {
+  background-color: rgba(122, 162, 247, 0.05) !important;
+  border-bottom-color: rgba(122, 162, 247, 0.2) !important;
+}
+
+.markdown pre code,
+.tiptap pre code {
+  display: block !important;
+  padding: 0 16px !important;
+  overflow-x: auto !important;
+  color: var(--code-normal) !important;
+  font-family: "ComicShannsMono Nerd Font", "LXGW ZhenKai GB", monospace !important;
+  line-height: var(--code-line-height) !important;
+  background-color: transparent !important;
+}
+
+/* ==============================================================================
+   7. Blockquote (Bulb icon rotates and glows on hover)
+   ============================================================================== */
+.markdown blockquote,
+.tiptap blockquote {
+  position: relative !important;
+  margin: 20px 0 !important;
+  padding: 18px 20px 18px 48px !important;
+  color: var(--text-color-secondary) !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(187, 154, 243, 0.3) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.markdown blockquote::before,
+.tiptap blockquote::before {
+  content: "💡" !important;
+  position: absolute !important;
+  left: 14px !important;
+  top: 18px !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+  filter: grayscale(1) !important;
+  opacity: 0.8 !important;
+  transform: rotate(30deg) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.markdown blockquote p,
+.tiptap blockquote p {
+  color: var(--text-color-secondary) !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  margin-bottom: 0.5em !important;
+}
+
+.markdown blockquote p:last-child,
+.tiptap blockquote p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown blockquote:hover,
+.tiptap blockquote:hover {
+  border-color: var(--primary-color) !important;
+  background-color: rgba(122, 162, 247, 0.05) !important;
+  box-shadow:
+    0 0 15px rgba(122, 162, 247, 0.1),
+    inset 0 0 10px rgba(122, 162, 247, 0.05) !important;
+  transform: scale(1.01) !important;
+}
+
+.markdown blockquote:hover::before,
+.tiptap blockquote:hover::before {
+  filter: grayscale(0) !important;
+  opacity: 1 !important;
+  transform: rotate(0deg) !important;
+  text-shadow: 0 0 10px var(--primary-color) !important;
+}
+
+/* ==============================================================================
+   8. Links (Obsidian bracket-sliding animation)
+   ============================================================================== */
+.markdown a,
+.tiptap a {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  padding: 0 2px !important;
+  margin: 0 !important;
+  border-radius: 4px !important;
+  position: relative !important;
+  border-bottom: none !important;
+  background-image: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.markdown a::before,
+.tiptap a::before {
+  content: "[" !important;
+  display: inline-block !important;
+  color: var(--text-muted) !important;
+  margin-right: 1px !important;
+  opacity: 0.7 !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s, opacity 0.3s !important;
+}
+
+.markdown a::after,
+.tiptap a::after {
+  content: "]" !important;
+  display: inline-block !important;
+  color: var(--text-muted) !important;
+  margin-left: 1px !important;
+  opacity: 0.7 !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s, opacity 0.3s !important;
+}
+
+.markdown a:hover,
+.tiptap a:hover {
+  background-color: rgba(122, 162, 247, 0.1) !important;
+  color: var(--link-hover-color) !important;
+  text-decoration: none !important;
+}
+
+.markdown a:hover::before,
+.tiptap a:hover::before {
+  transform: translateX(-4px) !important;
+  color: var(--link-hover-color) !important;
+  font-weight: bold !important;
+  opacity: 1 !important;
+}
+
+.markdown a:hover::after,
+.tiptap a:hover::after {
+  transform: translateX(4px) !important;
+  color: var(--link-hover-color) !important;
+  font-weight: bold !important;
+  opacity: 1 !important;
+}
+
+/* ==============================================================================
+   9. Emphasis — Bold/Italic/Strikethrough
+   ============================================================================== */
+@keyframes stitchFlow {
+  from {
+    background-position: 0 100%;
+  }
+  to {
+    background-position: 6px 100%;
+  }
+}
+
+/* Bold */
+.markdown strong,
+.tiptap strong {
+  font-weight: bold !important;
+  display: inline !important;
+  position: relative !important;
+  border-bottom: 2px solid transparent !important;
+  -webkit-box-decoration-break: clone !important;
+  box-decoration-break: clone !important;
+  transition: border-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease !important;
+  color: var(--primary-color) !important;
+}
+
+.markdown strong:hover,
+.tiptap strong:hover {
+  border-bottom-color: var(--primary-color) !important;
+  text-shadow: 0 0 10px var(--primary-color) !important;
+  z-index: 1 !important;
+}
+
+/* Italic - stitches line animation */
+.markdown em,
+.tiptap em {
+  font-style: italic !important;
+  text-decoration: none !important;
+  padding-bottom: 1px !important;
+  color: var(--secondary-color) !important;
+  background-repeat: repeat-x !important;
+  background-position: 0 100%;
+  background-size: 6px 3px !important;
+  transition: color 0.3s ease, --em-stitch-color 0.3s ease, -webkit-text-stroke 0.3s ease, text-shadow 0.3s ease !important;
+  -webkit-box-decoration-break: clone !important;
+  box-decoration-break: clone !important;
+  background-image: linear-gradient(
+    -45deg,
+    transparent 35%,
+    var(--em-stitch-color) 35%,
+    var(--em-stitch-color) 65%,
+    transparent 65%
+  ) !important;
+}
+
+.markdown em:hover,
+.tiptap em:hover {
+  color: var(--primary-color) !important;
+  --em-stitch-color: var(--primary-color) !important;
+  font-weight: normal !important;
+  -webkit-text-stroke: 0.5px var(--primary-color) !important;
+  text-shadow: var(--glow-shadow-text) !important;
+  animation: stitchFlow 0.5s linear infinite !important;
+}
+
+/* Bold Italic (Nested strong and em) */
+.markdown em strong,
+.tiptap em strong,
+.markdown strong em,
+.tiptap strong em {
+  color: var(--secondary-color) !important;
+  border-bottom: 2px solid transparent !important;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+.markdown em strong:hover,
+.tiptap em strong:hover,
+.markdown strong em:hover,
+.tiptap strong em:hover,
+.markdown em:hover strong,
+.tiptap em:hover strong,
+.markdown strong:hover em,
+.tiptap strong:hover em {
+  color: var(--primary-color) !important;
+  border-bottom-color: var(--primary-color) !important;
+  text-shadow: var(--glow-shadow-text) !important;
+}
+
+/* Strikethrough */
+.markdown s,
+.markdown del,
+.tiptap s,
+.tiptap del {
+  text-decoration: line-through !important;
+  transition: all 0.3s ease !important;
+  text-decoration-color: var(--primary-color) !important;
+  color: #888888 !important;
+}
+
+.markdown s:hover,
+.markdown del:hover,
+.tiptap s:hover,
+.tiptap del:hover {
+  opacity: 1 !important;
+  color: var(--primary-color) !important;
+  text-decoration-color: var(--secondary-color) !important;
+  cursor: not-allowed !important;
+  text-shadow: 0 0 8px var(--primary-color) !important;
+}
+
+/* ==============================================================================
+   10. KBD Keyboard Keys
+   ============================================================================== */
+.markdown kbd,
+.tiptap kbd {
+  font-family: "ComicShannsMono Nerd Font", "LXGW ZhenKai GB", monospace !important;
+  font-size: 0.9em !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  display: inline-block !important;
+  min-width: 1.6em !important;
+  padding: 3px 6px !important;
+  margin: 0 4px !important;
+  border-radius: 6px !important;
+  vertical-align: middle !important;
+  transition: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  text-shadow: none !important;
+  cursor: default !important;
+  background-color: #333333 !important;
+  color: var(--text-color) !important;
+  border: 1px solid #444444 !important;
+  border-top-color: #555555 !important;
+  border-bottom-color: #222222 !important;
+  box-shadow: 0 4px 0 #222222, 0 5px 5px rgba(0, 0, 0, 0.4) !important;
+}
+
+.markdown kbd:hover,
+.tiptap kbd:hover {
+  transform: translateY(2px) !important;
+  box-shadow: 0 2px 0 #222222, 0 3px 3px rgba(0, 0, 0, 0.4) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* ==============================================================================
+   11. Tables
+   ============================================================================== */
+.markdown table,
+.tiptap table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--table-border-radius) !important;
+  overflow: hidden !important;
+  background-color: var(--table-bg) !important;
+  line-height: var(--table-line-height) !important;
+}
+
+.markdown table th,
+.markdown table td,
+.tiptap table th,
+.tiptap table td {
+  padding: 10px 15px !important;
+  color: var(--text-color) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: 1px solid var(--table-border-inner) !important;
+  border-bottom: 1px solid var(--table-border-inner) !important;
+  transition: all 0.2s ease !important;
+}
+
+.markdown table th:last-child,
+.markdown table td:last-child,
+.tiptap table th:last-child,
+.tiptap table td:last-child {
+  border-right: none !important;
+}
+
+.markdown table tr:last-child td,
+.tiptap table tr:last-child td {
+  border-bottom: none !important;
+}
+
+.markdown table th,
+.tiptap table th {
+  background-color: var(--table-th-bg) !important;
+  color: var(--primary-color) !important;
+  font-weight: bold !important;
+  white-space: nowrap !important;
+  border-right: 1px solid var(--table-th-border) !important;
+  border-bottom: 1px solid var(--table-th-border) !important;
+}
+
+.markdown table th:last-child,
+.tiptap table th:last-child {
+  border-right: none !important;
+}
+
+.markdown table tbody tr:hover td,
+.tiptap table tbody tr:hover td {
+  background-color: var(--table-row-hover-bg) !important;
+}
+
+.markdown table tbody td:hover,
+.markdown table thead th:hover,
+.tiptap table tbody td:hover,
+.tiptap table thead th:hover {
+  background-color: var(--table-cell-hover-bg) !important;
+  color: var(--table-cell-hover-text) !important;
+  box-shadow: inset 0 0 0 1px var(--primary-color) !important;
+  cursor: default !important;
+  text-shadow: 0 0 8px var(--primary-color) !important;
+}
+
+.markdown table tr:nth-child(2n),
+.markdown table tr:nth-child(2n + 1),
+.tiptap table tr:nth-child(2n),
+.tiptap table tr:nth-child(2n + 1) {
+  background-color: transparent !important;
+}
+
+.markdown table thead tr,
+.tiptap table thead tr {
+  background-color: transparent !important;
+}
+
+/* ==============================================================================
+   12. Horizontal Rules (✦ icon spins and scale on hover)
+   ============================================================================== */
+.markdown hr,
+.tiptap hr {
+  margin: 2em auto !important;
+  border: none !important;
+  height: 24px !important;
+  position: relative !important;
+  overflow: visible !important;
+  background: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+}
+
+/* Dashed baseline */
+.markdown hr::after,
+.tiptap hr::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 50% !important;
+  height: 2px !important;
+  transform: translateY(-50%) !important;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color) 50%,
+    transparent 50%
+  ) !important;
+  background-size: 12px 2px !important;
+  background-repeat: repeat-x !important;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000000 25%,
+    #000000 75%,
+    transparent 100%
+  ) !important;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000000 25%,
+    #000000 75%,
+    transparent 100%
+  ) !important;
+  z-index: 1 !important;
+}
+
+/* Center star symbol */
+.markdown hr::before,
+.tiptap hr::before {
+  content: "✦" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin-top: -1px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  color: var(--primary-color) !important;
+  font-size: 1.25em !important;
+  font-family: serif !important;
+  z-index: 2 !important;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.markdown hr:hover::before,
+.tiptap hr:hover::before {
+  transform: translate(-50%, -50%) rotate(180deg) scale(1.3) !important;
+}
+
+/* ==============================================================================
+   13. Lists (Drawer animation + sibling dimming)
+   ============================================================================== */
+.markdown ul > li::marker,
+.markdown ol > li::marker,
+.tiptap ul > li::marker,
+.tiptap ol > li::marker {
+  color: var(--primary-color) !important;
+}
+
+.markdown ul, .tiptap ul {
+  list-style-type: disc !important;
+}
+
+.markdown ul ul, .tiptap ul ul {
+  list-style-type: circle !important;
+}
+
+.markdown ul ul ul, .tiptap ul ul ul {
+  list-style-type: square !important;
+}
+
+.markdown ol, .tiptap ol {
+  list-style-type: decimal !important;
+}
+
+.markdown ol ol, .tiptap ol ol {
+  list-style-type: lower-alpha !important;
+}
+
+.markdown ol ol ol, .tiptap ol ol ol {
+  list-style-type: lower-roman !important;
+}
+
+.markdown ul > li > ol,
+.tiptap ul > li > ol {
+  padding-left: 25px !important;
+}
+
+.markdown li,
+.tiptap li {
+  position: relative !important;
+}
+
+/* List drawer animation */
+.markdown ul li,
+.markdown ol li,
+.tiptap ul li,
+.tiptap ol li {
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.25s ease !important;
+}
+
+.markdown ul li:hover,
+.markdown ol li:hover,
+.tiptap ul li:hover,
+.tiptap ol li:hover {
+  transform: translateX(6px) !important;
+  opacity: 1 !important;
+}
+
+/* Prevent cumulative shifting in child list items while keeping full opacity */
+.markdown ul li:hover li,
+.markdown ol li:hover li,
+.tiptap ul li:hover li,
+.tiptap ol li:hover li {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+
+/* Reapply animation when the child list item itself is hovered */
+.markdown ul li:hover li:hover,
+.markdown ol li:hover li:hover,
+.tiptap ul li:hover li:hover,
+.tiptap ol li:hover li:hover {
+  transform: translateX(6px) !important;
+  opacity: 1 !important;
+}
+
+/* Sibling dimming: when hovering a list item, other sibling list items (and their children) dim to 0.6 opacity */
+.markdown ul:has(> li:hover) > li:not(:hover),
+.markdown ol:has(> li:hover) > li:not(:hover),
+.tiptap ul:has(> li:hover) > li:not(:hover),
+.tiptap ol:has(> li:hover) > li:not(:hover) {
+  opacity: 0.6 !important;
+}
+
+/* ==============================================================================
+   14. Task List Checkboxes (Circle checkbox with pulse scale & custom checkmark)
+   ============================================================================== */
+.markdown ul.contains-task-list,
+.tiptap ul.contains-task-list {
+  margin-left: 10px !important;
+}
+
+.markdown .task-list-item,
+.tiptap .task-list-item {
+  position: relative !important;
+  list-style: none !important;
+  padding-left: 4px !important;
+  min-height: calc(var(--line-height-customize) * 1em) !important;
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
+              color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              text-decoration-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
+  text-decoration-thickness: 2px !important;
+}
+
+.markdown .task-list-item.is-checked,
+.tiptap .task-list-item.is-checked {
+  color: #888888 !important;
+  opacity: 0.8 !important;
+  text-decoration-line: line-through !important;
+  text-decoration-color: var(--text-color-secondary) !important;
+}
+
+.markdown .task-list-item.is-checked p,
+.markdown .task-list-item.is-checked strong,
+.markdown .task-list-item.is-checked em,
+.markdown .task-list-item.is-checked mark,
+.markdown .task-list-item.is-checked code,
+.tiptap .task-list-item.is-checked p,
+.tiptap .task-list-item.is-checked strong,
+.tiptap .task-list-item.is-checked em,
+.tiptap .task-list-item.is-checked mark,
+.tiptap .task-list-item.is-checked code {
+  text-decoration: line-through !important;
+  text-decoration-color: var(--text-color-secondary) !important;
+  text-decoration-thickness: 2px !important;
+  color: inherit !important;
+  opacity: 1 !important;
+}
+
+/* Checkbox style */
+.markdown input[type="checkbox"],
+.tiptap input[type="checkbox"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  position: absolute !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  left: -1.3rem !important;
+  width: var(--checkbox-size) !important;
+  height: var(--checkbox-size) !important;
+  z-index: 10 !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  pointer-events: auto !important;
+}
+
+.markdown input[type="checkbox"]::before,
+.tiptap input[type="checkbox"]::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  border-radius: 50% !important;
+  background-color: var(--checkbox-bg-unchecked) !important;
+  border: 2px solid var(--checkbox-border-unchecked) !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.markdown input[type="checkbox"]:checked::before,
+.tiptap input[type="checkbox"]:checked::before {
+  border: 1px solid var(--primary-color) !important;
+  background-color: var(--checkbox-bg-checked) !important;
+  box-shadow: var(--checkbox-shadow-checked) !important;
+  animation: task-pulse 0.4s forwards !important;
+}
+
+.markdown input[type="checkbox"]::after,
+.tiptap input[type="checkbox"]::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  top: 45% !important;
+  left: 50% !important;
+  width: 0.45rem !important;
+  height: 0.25rem !important;
+  background-color: transparent !important;
+  border: 2.5px solid var(--checkmark-color) !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  transform: translate(-50%, -50%) rotate(-45deg) scale(0) !important;
+  opacity: 0 !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.4) !important;
+  pointer-events: none !important;
+}
+
+.markdown input[type="checkbox"]:checked::after,
+.tiptap input[type="checkbox"]:checked::after {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1) !important;
+  border-color: var(--checkmark-color) !important;
+}
+
+/* Checkbox hover scale */
+.markdown li.task-list-item:hover input[type="checkbox"]::before,
+.tiptap li.task-list-item:hover input[type="checkbox"]::before {
+  transform: scale(1.15) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: var(--checkbox-shadow-checked) !important;
+}
+
+@keyframes task-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ==============================================================================
+   15. Images
+   ============================================================================== */
+.markdown img,
+.tiptap img {
+  max-width: 100% !important;
+  border-radius: 8px !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.markdown img:hover,
+.tiptap img:hover {
+  transform: scale(1.01) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ==============================================================================
+   16. Math Formulas — KaTeX (Block 3D float + Inline glow)
+   ============================================================================== */
+
+/* Block formulas — .katex-display */
+.markdown .katex-display,
+.tiptap .katex-display {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+  border-radius: 8px !important;
+  display: block !important;
+  position: relative !important;
+  color: var(--text-normal) !important;
+}
+
+.markdown .katex-display:hover,
+.tiptap .katex-display:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  color: var(--primary-color) !important;
+}
+
+.markdown .katex-display:hover .katex,
+.tiptap .katex-display:hover .katex {
+  color: var(--primary-color) !important;
+}
+
+.markdown .katex-display:hover .katex .mord,
+.markdown .katex-display:hover .katex .mfrac,
+.markdown .katex-display:hover .katex .frac-line,
+.markdown .katex-display:hover .katex .vlist,
+.markdown .katex-display:hover .katex .vlist-t,
+.markdown .katex-display:hover .katex .vlist-r,
+.markdown .katex-display:hover .katex .col-align,
+.markdown .katex-display:hover .katex .arraycolsep,
+.markdown .katex-display:hover .katex .pstrut,
+.markdown .katex-display:hover .katex .delimsizing,
+.markdown .katex-display:hover .katex .styling,
+.markdown .katex-display:hover .katex .mathnormal,
+.markdown .katex-display:hover .katex .mathbf,
+.markdown .katex-display:hover .katex .mathit,
+.markdown .katex-display:hover .katex .mathrm,
+.markdown .katex-display:hover .katex .mathsf,
+.markdown .katex-display:hover .katex .mathtt,
+.markdown .katex-display:hover .katex .mbin,
+.markdown .katex-display:hover .katex .mrel,
+.markdown .katex-display:hover .katex .mopen,
+.markdown .katex-display:hover .katex .mclose,
+.markdown .katex-display:hover .katex .mpunct,
+.markdown .katex-display:hover .katex .minner,
+.markdown .katex-display:hover .katex .mop,
+.markdown .katex-display:hover .katex .mtable,
+.markdown .katex-display:hover .katex .mtd,
+.markdown .katex-display:hover .katex .mtr,
+.markdown .katex-display:hover .katex .svg-align,
+.markdown .katex-display:hover .katex .strut,
+.markdown .katex-display:hover .katex .frac-line,
+.markdown .katex-display:hover .katex .nulldelimiter,
+.tiptap .katex-display:hover .katex .mord,
+.tiptap .katex-display:hover .katex .mfrac,
+.tiptap .katex-display:hover .katex .frac-line,
+.tiptap .katex-display:hover .katex .vlist,
+.tiptap .katex-display:hover .katex .vlist-t,
+.tiptap .katex-display:hover .katex .vlist-r,
+.tiptap .katex-display:hover .katex .col-align,
+.tiptap .katex-display:hover .katex .arraycolsep,
+.tiptap .katex-display:hover .katex .pstrut,
+.tiptap .katex-display:hover .katex .delimsizing,
+.tiptap .katex-display:hover .katex .styling,
+.tiptap .katex-display:hover .katex .mathnormal,
+.tiptap .katex-display:hover .katex .mathbf,
+.tiptap .katex-display:hover .katex .mathit,
+.tiptap .katex-display:hover .katex .mathrm,
+.tiptap .katex-display:hover .katex .mathsf,
+.tiptap .katex-display:hover .katex .mathtt,
+.tiptap .katex-display:hover .katex .mbin,
+.tiptap .katex-display:hover .katex .mrel,
+.tiptap .katex-display:hover .katex .mopen,
+.tiptap .katex-display:hover .katex .mclose,
+.tiptap .katex-display:hover .katex .mpunct,
+.tiptap .katex-display:hover .katex .minner,
+.tiptap .katex-display:hover .katex .mop,
+.tiptap .katex-display:hover .katex .mtable,
+.tiptap .katex-display:hover .katex .mtd,
+.tiptap .katex-display:hover .katex .mtr,
+.tiptap .katex-display:hover .katex .svg-align,
+.tiptap .katex-display:hover .katex .strut,
+.tiptap .katex-display:hover .katex .frac-line,
+.tiptap .katex-display:hover .katex .nulldelimiter {
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Inline formulas — .katex (excluding inside .katex-display) */
+.markdown :not(.katex-display) .katex,
+.tiptap :not(.katex-display) .katex {
+  transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease !important;
+  display: inline-block !important;
+  position: relative !important;
+  color: var(--text-normal) !important;
+}
+
+.markdown :not(.katex-display) > .katex:hover,
+.tiptap :not(.katex-display) > .katex:hover {
+  color: var(--primary-color) !important;
+  transform: scale(1.05) !important;
+  text-shadow: 0 0 8px var(--primary-color) !important;
+}
+
+.markdown :not(.katex-display) > .katex:hover .mord,
+.markdown :not(.katex-display) > .katex:hover .mfrac,
+.markdown :not(.katex-display) > .katex:hover .mbin,
+.markdown :not(.katex-display) > .katex:hover .mrel,
+.markdown :not(.katex-display) > .katex:hover .mopen,
+.markdown :not(.katex-display) > .katex:hover .mclose,
+.markdown :not(.katex-display) > .katex:hover .mpunct,
+.markdown :not(.katex-display) > .katex:hover .minner,
+.markdown :not(.katex-display) > .katex:hover .mop,
+.markdown :not(.katex-display) > .katex:hover .mathnormal,
+.markdown :not(.katex-display) > .katex:hover .mathbf,
+.markdown :not(.katex-display) > .katex:hover .mathit,
+.markdown :not(.katex-display) > .katex:hover .mathrm,
+.markdown :not(.katex-display) > .katex:hover .mathsf,
+.markdown :not(.katex-display) > .katex:hover .mathtt,
+.tiptap :not(.katex-display) > .katex:hover .mord,
+.tiptap :not(.katex-display) > .katex:hover .mfrac,
+.tiptap :not(.katex-display) > .katex:hover .mbin,
+.tiptap :not(.katex-display) > .katex:hover .mrel,
+.tiptap :not(.katex-display) > .katex:hover .mopen,
+.tiptap :not(.katex-display) > .katex:hover .mclose,
+.tiptap :not(.katex-display) > .katex:hover .mpunct,
+.tiptap :not(.katex-display) > .katex:hover .minner,
+.tiptap :not(.katex-display) > .katex:hover .mop,
+.tiptap :not(.katex-display) > .katex:hover .mathnormal,
+.tiptap :not(.katex-display) > .katex:hover .mathbf,
+.tiptap :not(.katex-display) > .katex:hover .mathit,
+.tiptap :not(.katex-display) > .katex:hover .mathrm,
+.tiptap :not(.katex-display) > .katex:hover .mathsf,
+.tiptap :not(.katex-display) > .katex:hover .mathtt {
+  color: var(--primary-color) !important;
+}
+
+/* ==============================================================================
+   17. Chat Bubbles (Glass morphism bubbles — user border = bold color,
+       assistant border = italic color)
+   ============================================================================== */
+.message-content-container {
+  border-radius: 16px !important;
+  backdrop-filter: blur(22px) saturate(1.5) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.5) !important;
+  padding: 18px 22px !important;
+  margin: 12px 0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* User bubble — clear border = primary color (bold color) */
+.message-user .message-content-container,
+.message.user .message-content-container,
+.chat-item.user .message-content-container {
+  background: linear-gradient(135deg, rgba(122, 162, 247, 0.08) 0%, rgba(30, 34, 53, 0.55) 100%) !important;
+  border: 1px solid rgba(122, 162, 247, 0.85) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.25), 0 0 12px rgba(122, 162, 247, 0.25) !important;
+}
+
+/* Assistant bubble — clear border = secondary color (italic color) */
+.message-assistant .message-content-container,
+.message.assistant .message-content-container,
+.chat-item.assistant .message-content-container {
+  background: linear-gradient(135deg, rgba(187, 154, 243, 0.08) 0%, rgba(30, 34, 53, 0.55) 100%) !important;
+  border: 1px solid rgba(187, 154, 243, 0.75) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0, 0, 0, 0.25), 0 0 12px rgba(187, 154, 243, 0.2) !important;
+}
+
+/* Hover — lift and intensified glow */
+.message-content-container:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 18px rgba(122, 162, 247, 0.5) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Light mode overrides — clear glass borders and white refraction */
+body[theme-mode="light"] .message-user .message-content-container,
+body[theme-mode="light"] .message.user .message-content-container,
+body[theme-mode="light"] .chat-item.user .message-content-container {
+  background: linear-gradient(135deg, rgba(56, 94, 242, 0.05) 0%, rgba(255, 255, 255, 0.6) 100%) !important;
+  border: 1px solid rgba(56, 94, 242, 0.75) !important;
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.85), 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 10px rgba(56, 94, 242, 0.15) !important;
+}
+
+body[theme-mode="light"] .message-assistant .message-content-container,
+body[theme-mode="light"] .message.assistant .message-content-container,
+body[theme-mode="light"] .chat-item.assistant .message-content-container {
+  background: linear-gradient(135deg, rgba(152, 84, 241, 0.05) 0%, rgba(255, 255, 255, 0.6) 100%) !important;
+  border: 1px solid rgba(152, 84, 241, 0.65) !important;
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.85), 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 10px rgba(152, 84, 241, 0.15) !important;
+}
+
+body[theme-mode="light"] .message-content-container:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 18px rgba(56, 94, 242, 0.4) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* ==============================================================================
+   18. Scrollbars
+   ============================================================================== */
+.markdown ::-webkit-scrollbar,
+.tiptap ::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.markdown ::-webkit-scrollbar-track,
+.tiptap ::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.markdown ::-webkit-scrollbar-thumb,
+.tiptap ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
+}
+
+body[theme-mode="light"] .markdown ::-webkit-scrollbar-thumb,
+body[theme-mode="light"] .tiptap ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.markdown ::-webkit-scrollbar-thumb:hover,
+.tiptap ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body[theme-mode="light"] .markdown ::-webkit-scrollbar-thumb:hover,
+body[theme-mode="light"] .tiptap ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ==============================================================================
+   19. Input Bar (Glass morphism input bar — Miku-more style with Tokyonight palette)
+   ============================================================================== */
+.inputbar-container {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, rgba(30, 34, 53, 0.6) 0%, rgba(26, 30, 48, 0.8) 100%) !important;
+  border: 1px solid rgba(122, 162, 247, 0.25) !important;
+  border-radius: 28px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 10px 32px rgba(0, 0, 0, 0.28) !important;
+  backdrop-filter: blur(16px) saturate(1.45) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.45) !important;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.inputbar-container:focus-within {
+  border-color: rgba(122, 162, 247, 0.8) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 0 2px rgba(122, 162, 247, 0.1) ,
+    0 10px 36px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(122, 162, 247, 0.4) !important;
+}
+
+#inputbar .ant-input-textarea,
+#inputbar textarea.ant-input,
+#inputbar .ant-input-data-count {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-color) !important;
+  font-family: "ComicShannsMono Nerd Font", "LXGW ZhenKai GB", monospace !important;
+  font-size: 16px !important;
+}
+
+#inputbar textarea.ant-input::placeholder {
+  color: var(--text-color-secondary) !important;
+  opacity: 0.6 !important;
+}
+
+/* Bottom action buttons in inputbar */
+#inputbar .ant-btn:not(.ant-btn-color-primary):not(.ant-btn-variant-solid) {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: var(--text-color-secondary) !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+#inputbar .ant-btn:not(.ant-btn-color-primary):not(.ant-btn-variant-solid):hover {
+  color: var(--primary-color) !important;
+  transform: scale(1.05) !important;
+  background: rgba(122, 162, 247, 0.1) !important;
+}
+
+/* Light mode overrides for Input Bar */
+body[theme-mode="light"] .inputbar-container {
+  background: linear-gradient(180deg, rgba(233, 234, 240, 0.6) 0%, rgba(225, 226, 231, 0.8) 100%) !important;
+  border: 1px solid rgba(56, 94, 242, 0.2) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 10px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+body[theme-mode="light"] .inputbar-container:focus-within {
+  border-color: rgba(56, 94, 242, 0.7) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 0 0 2px rgba(56, 94, 242, 0.08),
+    0 10px 36px rgba(0, 0, 0, 0.18),
+    0 0 20px rgba(56, 94, 242, 0.3) !important;
+}
+
+body[theme-mode="light"] #inputbar .ant-btn:not(.ant-btn-color-primary):not(.ant-btn-variant-solid):hover {
+  color: var(--primary-color) !important;
+  background: rgba(56, 94, 242, 0.08) !important;
+}
+
+/* ==============================================================================
+   20. Buttons & Controls (Tokyonight style buttons)
+   ============================================================================== */
+
+/* Global Primary / Solid Buttons (Dark Theme) */
+body[theme-mode="dark"] .ant-btn-primary,
+body[theme-mode="dark"] .ant-btn-color-primary,
+body[theme-mode="dark"] .ant-btn-variant-solid {
+  background-color: var(--primary-color) !important; /* #7aa2f7 */
+  border-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(122, 162, 247, 0.3) !important;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+body[theme-mode="dark"] .ant-btn-primary:hover,
+body[theme-mode="dark"] .ant-btn-color-primary:hover,
+body[theme-mode="dark"] .ant-btn-variant-solid:hover {
+  background-color: #89b0ff !important;
+  border-color: #89b0ff !important;
+  box-shadow: 0 0 15px rgba(122, 162, 247, 0.6) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Global Primary / Solid Buttons (Light Theme - Tokyonight Day Blue) */
+body[theme-mode="light"] .ant-btn-primary,
+body[theme-mode="light"] .ant-btn-color-primary,
+body[theme-mode="light"] .ant-btn-variant-solid {
+  background-color: var(--primary-color) !important; /* #385ef2 */
+  border-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(56, 94, 242, 0.25) !important;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+body[theme-mode="light"] .ant-btn-primary:hover,
+body[theme-mode="light"] .ant-btn-color-primary:hover,
+body[theme-mode="light"] .ant-btn-variant-solid:hover {
+  background-color: #4f72ff !important;
+  border-color: #4f72ff !important;
+  box-shadow: 0 0 12px rgba(56, 94, 242, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Global Outline / Default Buttons (Dark Mode) */
+body[theme-mode="dark"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid) {
+  border-color: var(--border-color) !important;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text-color) !important;
+}
+body[theme-mode="dark"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid):hover,
+body[theme-mode="dark"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid):focus,
+body[theme-mode="dark"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid):active {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background-color: rgba(122, 162, 247, 0.08) !important;
+  box-shadow: 0 0 10px rgba(122, 162, 247, 0.25) !important;
+}
+
+/* Global Outline / Default Buttons (Light Mode) */
+body[theme-mode="light"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid) {
+  border-color: var(--border-color) !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  color: var(--text-color) !important;
+}
+body[theme-mode="light"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid):hover,
+body[theme-mode="light"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid):focus,
+body[theme-mode="light"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-primary):not(.ant-btn-variant-solid):active {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background-color: rgba(56, 94, 242, 0.06) !important;
+  box-shadow: 0 0 8px rgba(56, 94, 242, 0.2) !important;
+}
+
+
+div.ant-dropdown-trigger:has(.truncate),
+.ant-dropdown-trigger:has(.name),
+.ant-menu-item,
+.ant-dropdown-menu-item,
+.ant-select-item {
+  border-left: 2px solid transparent !important;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  position: relative !important;
+}
+
+/* --- Dark Mode Styling --- */
+
+/* Active / Selected Items (Dark Mode) */
+body[theme-mode="dark"] .draggable-content > div[class*="ant-dropdown-trigger"].active,
+body[theme-mode="dark"] div.ant-dropdown-trigger:has(.truncate).active,
+body[theme-mode="dark"] div.ant-dropdown-trigger:has(.truncate)[class*="bg-[var(--color-list-item)]"],
+body[theme-mode="dark"] .ant-dropdown-trigger:has(.name).active,
+body[theme-mode="dark"] .ant-dropdown-trigger:has(.name)[class*="bg-[var(--color-list-item)]"],
+body[theme-mode="dark"] .ant-menu-item-selected,
+body[theme-mode="dark"] .ant-menu-item.ant-menu-item-selected,
+body[theme-mode="dark"] .ant-dropdown-menu-item-selected,
+body[theme-mode="dark"] .ant-select-item-option-selected {
+  background-color: rgba(122, 162, 247, 0.15) !important;
+  border-left-color: var(--primary-color) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 8px rgba(122, 162, 247, 0.15) !important;
+}
+
+/* Active / Selected items children text/icons (Dark Mode) */
+body[theme-mode="dark"] .draggable-content > div[class*="ant-dropdown-trigger"].active [title],
+body[theme-mode="dark"] .draggable-content > div[class*="ant-dropdown-trigger"].active .time,
+body[theme-mode="dark"] div.ant-dropdown-trigger:has(.truncate).active .truncate,
+body[theme-mode="dark"] div.ant-dropdown-trigger:has(.truncate)[class*="bg-[var(--color-list-item)]"] .truncate,
+body[theme-mode="dark"] .ant-dropdown-trigger:has(.name).active .name,
+body[theme-mode="dark"] .ant-dropdown-trigger:has(.name)[class*="bg-[var(--color-list-item)]"] .name,
+body[theme-mode="dark"] .ant-menu-item-selected .ant-menu-title-content,
+body[theme-mode="dark"] .ant-select-item-option-selected .ant-select-item-option-content {
+  color: var(--primary-color) !important;
+  text-shadow: 0 0 8px rgba(122, 162, 247, 0.4) !important;
+  opacity: 1 !important;
+}
+
+/* Hover Items (Dark Mode) */
+body[theme-mode="dark"] .draggable-content > div[class*="ant-dropdown-trigger"]:hover:not(.active),
+body[theme-mode="dark"] div.ant-dropdown-trigger:has(.truncate):hover:not(.active):not([class*="bg-[var(--color-list-item)]"]),
+body[theme-mode="dark"] .ant-dropdown-trigger:has(.name):hover:not(.active):not([class*="bg-[var(--color-list-item)]"]),
+body[theme-mode="dark"] .ant-menu-item:hover:not(.ant-menu-item-selected),
+body[theme-mode="dark"] .ant-dropdown-menu-item:hover:not(.ant-dropdown-menu-item-selected),
+body[theme-mode="dark"] .ant-select-item-option-hover:not(.ant-select-item-option-selected) {
+  background-color: rgba(122, 162, 247, 0.08) !important;
+  border-left-color: rgba(122, 162, 247, 0.4) !important;
+}
+
+body[theme-mode="dark"] .draggable-content > div[class*="ant-dropdown-trigger"]:hover [title],
+body[theme-mode="dark"] .draggable-content > div[class*="ant-dropdown-trigger"]:hover .time,
+body[theme-mode="dark"] div.ant-dropdown-trigger:has(.truncate):hover .truncate,
+body[theme-mode="dark"] .ant-dropdown-trigger:has(.name):hover .name,
+body[theme-mode="dark"] .ant-menu-item:hover .ant-menu-title-content {
+  color: var(--primary-color) !important;
+  opacity: 1 !important;
+}
+
+/* --- Light Mode Styling --- */
+
+/* Active / Selected Items (Light Mode) */
+body[theme-mode="light"] .draggable-content > div[class*="ant-dropdown-trigger"].active,
+body[theme-mode="light"] div.ant-dropdown-trigger:has(.truncate).active,
+body[theme-mode="light"] div.ant-dropdown-trigger:has(.truncate)[class*="bg-[var(--color-list-item)]"],
+body[theme-mode="light"] .ant-dropdown-trigger:has(.name).active,
+body[theme-mode="light"] .ant-dropdown-trigger:has(.name)[class*="bg-[var(--color-list-item)]"],
+body[theme-mode="light"] .ant-menu-item-selected,
+body[theme-mode="light"] .ant-menu-item.ant-menu-item-selected,
+body[theme-mode="light"] .ant-dropdown-menu-item-selected,
+body[theme-mode="light"] .ant-select-item-option-selected {
+  background-color: rgba(56, 94, 242, 0.12) !important;
+  border-left-color: var(--primary-color) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 8px rgba(56, 94, 242, 0.12) !important;
+}
+
+/* Active / Selected items children text/icons (Light Mode) */
+body[theme-mode="light"] .draggable-content > div[class*="ant-dropdown-trigger"].active [title],
+body[theme-mode="light"] .draggable-content > div[class*="ant-dropdown-trigger"].active .time,
+body[theme-mode="light"] div.ant-dropdown-trigger:has(.truncate).active .truncate,
+body[theme-mode="light"] div.ant-dropdown-trigger:has(.truncate)[class*="bg-[var(--color-list-item)]"] .truncate,
+body[theme-mode="light"] .ant-dropdown-trigger:has(.name).active .name,
+body[theme-mode="light"] .ant-dropdown-trigger:has(.name)[class*="bg-[var(--color-list-item)]"] .name,
+body[theme-mode="light"] .ant-menu-item-selected .ant-menu-title-content,
+body[theme-mode="light"] .ant-select-item-option-selected .ant-select-item-option-content {
+  color: var(--primary-color) !important;
+  text-shadow: 0 0 6px rgba(56, 94, 242, 0.25) !important;
+  opacity: 1 !important;
+}
+
+/* Hover Items (Light Mode) */
+body[theme-mode="light"] .draggable-content > div[class*="ant-dropdown-trigger"]:hover:not(.active),
+body[theme-mode="light"] div.ant-dropdown-trigger:has(.truncate):hover:not(.active):not([class*="bg-[var(--color-list-item)]"]),
+body[theme-mode="light"] .ant-dropdown-trigger:has(.name):hover:not(.active):not([class*="bg-[var(--color-list-item)]"]),
+body[theme-mode="light"] .ant-menu-item:hover:not(.ant-menu-item-selected),
+body[theme-mode="light"] .ant-dropdown-menu-item:hover:not(.ant-dropdown-menu-item-selected),
+body[theme-mode="light"] .ant-select-item-option-hover:not(.ant-select-item-option-selected) {
+  background-color: rgba(56, 94, 242, 0.06) !important;
+  border-left-color: rgba(56, 94, 242, 0.4) !important;
+}
+
+body[theme-mode="light"] .draggable-content > div[class*="ant-dropdown-trigger"]:hover [title],
+body[theme-mode="light"] .draggable-content > div[class*="ant-dropdown-trigger"]:hover .time,
+body[theme-mode="light"] div.ant-dropdown-trigger:has(.truncate):hover .truncate,
+body[theme-mode="light"] .ant-dropdown-trigger:has(.name):hover .name,
+body[theme-mode="light"] .ant-menu-item:hover .ant-menu-title-content {
+  color: var(--primary-color) !important;
+  opacity: 1 !important;
+}
+
+/* Icon Micromotion Scale on Hover (only for assistant/tool icons, not text) */
+.ant-dropdown-trigger:has(.name):hover .name > div:first-child {
+  transform: scale(1.04) !important;
+  transition: transform 0.2s ease !important;
+}
+
+/* Close / Remove buttons inside lists */
+.draggable-content > div[class*="ant-dropdown-trigger"] .menu,
+div.ant-dropdown-trigger:has(.truncate) .menu {
+  opacity: 0 !important;
+  transition: all 0.2s ease !important;
+  border-radius: 4px !important;
+}
+
+.draggable-content > div[class*="ant-dropdown-trigger"]:hover .menu,
+div.ant-dropdown-trigger:has(.truncate):hover .menu {
+  opacity: 0.5 !important;
+}
+
+.draggable-content > div[class*="ant-dropdown-trigger"] .menu:hover,
+div.ant-dropdown-trigger:has(.truncate) .menu:hover {
+  opacity: 1 !important;
+  background-color: rgba(255, 77, 79, 0.15) !important;
+  color: #ff4d4f !important;
+}

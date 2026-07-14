@@ -1,0 +1,10 @@
+# OS artifacts
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
