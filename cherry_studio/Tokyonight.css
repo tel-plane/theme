@@ -2,8 +2,8 @@
 ================================================================================
 🎨 Tokyonight Theme for Cherry Studio
 ================================================================================
-设计风格：东京夜色 Tokyonight Storm (Dark) / Tokyonight Day (Light)
-本主题包含完整的 Obsidian 级 Markdown 渲染特效与样式。
+Style: Tokyonight Storm (Dark) / Tokyonight Day (Light)
+Complete Markdown rendering effects and custom styling for Cherry Studio.
 ================================================================================
 */
 
@@ -14,17 +14,19 @@
 }
 
 /* ==============================================================================
-   1. CSS Variables - Dark (Tokyonight Storm) & Light (Tokyonight Day)
+   1. CSS Variables
    ============================================================================== */
 
-/* --- Dark Mode (Tokyonight Storm) --- */
-body[theme-mode="dark"] {
-  /* Heading decoration icons (dot matrix SVG) */
+/* --- Shared Heading Icons (Dot matrix SVG) --- */
+:root {
   --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
   --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
   --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
   --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
+}
 
+/* --- Dark Mode (Tokyonight Storm) --- */
+body[theme-mode="dark"] {
   /* Palette */
   --bg-color: #24283b;
   --text-color: #c0caf5;
@@ -97,12 +99,6 @@ body[theme-mode="dark"] {
 
 /* --- Light Mode (Tokyonight Day) --- */
 body[theme-mode="light"] {
-  /* Heading decoration icons (dot matrix SVG) */
-  --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
-  --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
-  --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
-  --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286z'/></svg>");
-
   /* Palette */
   --bg-color: #e1e2e7;
   --text-color: #343b58;
@@ -182,7 +178,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   3. Markdown Document Styling (LXGW ZhenKai GB for regular text)
+   3. Markdown Document Styling
    ============================================================================== */
 .markdown,
 .tiptap {
@@ -515,7 +511,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   5. Inline Code (锁定 ComicShannsMono Nerd Font + 中文 LXGW ZhenKai GB)
+   5. Inline Code
    ============================================================================== */
 .markdown code:not(pre code),
 .tiptap code:not(pre code) {
@@ -547,7 +543,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   6. Code Blocks (Red/Yellow/Green traffic dots + Hover border glow)
+   6. Code Blocks
    ============================================================================== */
 .markdown pre,
 .tiptap pre {
@@ -580,7 +576,7 @@ body[theme-mode="light"] {
   width: 100% !important;
   height: 32px !important;
   background-color: rgba(122, 162, 247, 0.04) !important;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsMDYpIi8+Cjwvc3ZnPg==) !important;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==) !important;
   background-repeat: no-repeat !important;
   background-size: 54px !important;
   background-position: 12px center !important;
@@ -607,7 +603,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   7. Blockquote (Bulb icon rotates and glows on hover)
+   7. Blockquotes
    ============================================================================== */
 .markdown blockquote,
 .tiptap blockquote {
@@ -667,7 +663,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   8. Links (Obsidian bracket-sliding animation)
+   8. Links
    ============================================================================== */
 .markdown a,
 .tiptap a {
@@ -728,7 +724,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   9. Emphasis — Bold/Italic/Strikethrough
+   9. Emphasis
    ============================================================================== */
 @keyframes stitchFlow {
   from {
@@ -955,7 +951,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   12. Horizontal Rules (✦ icon spins and scale on hover)
+   12. Horizontal Rules
    ============================================================================== */
 .markdown hr,
 .tiptap hr {
@@ -1032,7 +1028,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   13. Lists (Drawer animation + sibling dimming)
+   13. Lists
    ============================================================================== */
 .markdown ul > li::marker,
 .markdown ol > li::marker,
@@ -1118,7 +1114,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   14. Task List Checkboxes (Circle checkbox with pulse scale & custom checkmark)
+   14. Task List Checkboxes
    ============================================================================== */
 .markdown ul.contains-task-list,
 .tiptap ul.contains-task-list {
@@ -1277,7 +1273,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   16. Math Formulas — KaTeX (Block 3D float + Inline glow)
+   16. Math Formulas (KaTeX)
    ============================================================================== */
 
 /* Block formulas — .katex-display */
@@ -1418,8 +1414,7 @@ body[theme-mode="light"] {
 }
 
 /* ==============================================================================
-   17. Chat Bubbles (Glass morphism bubbles — user border = bold color,
-       assistant border = italic color)
+   17. Chat Bubbles
    ============================================================================== */
 .message-content-container {
   border-radius: 16px !important;
@@ -1517,7 +1512,7 @@ body[theme-mode="light"] .tiptap ::-webkit-scrollbar-thumb:hover {
 }
 
 /* ==============================================================================
-   19. Input Bar (Glass morphism input bar — Miku-more style with Tokyonight palette)
+   19. Input Bar
    ============================================================================== */
 .inputbar-container {
   position: relative !important;
@@ -1599,14 +1594,14 @@ body[theme-mode="light"] #inputbar .ant-btn:not(.ant-btn-color-primary):not(.ant
 }
 
 /* ==============================================================================
-   20. Buttons & Controls (Tokyonight style buttons)
+   20. Buttons & Controls
    ============================================================================== */
 
 /* Global Primary / Solid Buttons (Dark Theme) */
 body[theme-mode="dark"] .ant-btn-primary,
 body[theme-mode="dark"] .ant-btn-color-primary,
 body[theme-mode="dark"] .ant-btn-variant-solid {
-  background-color: var(--primary-color) !important; /* #7aa2f7 */
+  background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
   color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(122, 162, 247, 0.3) !important;
@@ -1622,11 +1617,11 @@ body[theme-mode="dark"] .ant-btn-variant-solid:hover {
   transform: translateY(-1px) !important;
 }
 
-/* Global Primary / Solid Buttons (Light Theme - Tokyonight Day Blue) */
+/* Global Primary / Solid Buttons (Light Theme) */
 body[theme-mode="light"] .ant-btn-primary,
 body[theme-mode="light"] .ant-btn-color-primary,
 body[theme-mode="light"] .ant-btn-variant-solid {
-  background-color: var(--primary-color) !important; /* #385ef2 */
+  background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
   color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(56, 94, 242, 0.25) !important;
@@ -1671,7 +1666,6 @@ body[theme-mode="light"] .ant-btn:not(.ant-btn-primary):not(.ant-btn-color-prima
   background-color: rgba(56, 94, 242, 0.06) !important;
   box-shadow: 0 0 8px rgba(56, 94, 242, 0.2) !important;
 }
-
 
 div.ant-dropdown-trigger:has(.truncate),
 .ant-dropdown-trigger:has(.name),
@@ -1785,7 +1779,7 @@ body[theme-mode="light"] .ant-menu-item:hover .ant-menu-title-content {
   opacity: 1 !important;
 }
 
-/* Icon Micromotion Scale on Hover (only for assistant/tool icons, not text) */
+/* Icon Micromotion Scale on Hover */
 .ant-dropdown-trigger:has(.name):hover .name > div:first-child {
   transform: scale(1.04) !important;
   transition: transform 0.2s ease !important;
