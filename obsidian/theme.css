@@ -5103,14 +5103,48 @@ body.folder-icons .nav-folder:not(.is-collapsed)>.nav-folder-title .nav-folder-t
 }
 
 /* Font Setup */
-:root {
-  --font-text: 'LXGW ZhenKai GB', sans-serif;
-  --font-interface: 'LXGW ZhenKai GB', sans-serif;
-  --font-monospace: 'ComicShannsMono Nerd Font', 'LXGW ZhenKai GB', monospace;
-}
+/* Target the *-theme sub-variables that Obsidian's app.css consumes inside the
+   --font-text / --font-interface / --font-monospace cascades. Setting the bare
+   --font-* names does not work because app.css re-declares them at equal
+   specificity and overrides the theme. Also pin the *-override slots so a user
+   picking a font in Settings > Appearance cannot silently revert the theme. */
 body {
+  --font-interface-theme:    'LXGW ZhenKai GB', sans-serif;
+  --font-interface-override:  'LXGW ZhenKai GB', sans-serif;
+  --font-text-theme:         'LXGW ZhenKai GB', sans-serif;
+  --font-text-override:       'LXGW ZhenKai GB', sans-serif;
+  --font-monospace-theme:    'ComicShannsMono Nerd Font', 'LXGW ZhenKai GB', monospace;
+  --font-monospace-override: 'ComicShannsMono Nerd Font', 'LXGW ZhenKai GB', monospace;
+}
+/* Belt-and-suspenders: directly set the resolved variables too, in case a
+   third-party plugin re-declares the cascade. */
+:root {
+  --font-text:       'LXGW ZhenKai GB', sans-serif;
+  --font-interface:  'LXGW ZhenKai GB', sans-serif;
+  --font-monospace:  'ComicShannsMono Nerd Font', 'LXGW ZhenKai GB', monospace;
+}
+/* Force the font onto the concrete view containers with !important so nothing
+   downstream in app.css can re-resolve it away from the theme font. Covers
+   reading view, Live Preview, Source mode, and the app chrome. */
+body,
+.markdown-preview-view,
+.markdown-rendered,
+.markdown-source-view,
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-source-view.mod-cm6 .cm-line,
+.workspace-leaf-content,
+.view-content,
+.side-dock-settings,
+.sidebar,
+.view-header,
+.view-header-title,
+.status-bar,
+.titlebar,
+.ribbon {
   font-family: 'LXGW ZhenKai GB', sans-serif !important;
 }
+/* Code surfaces keep the monospace stack. */
 code, kbd, pre, .markdown-rendered code, .cm-inline-code, .HyperMD-codeblock, .cm-codeblock, .cm-formatting-code {
   font-family: 'ComicShannsMono Nerd Font', 'LXGW ZhenKai GB', monospace !important;
 }

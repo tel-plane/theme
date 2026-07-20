@@ -105,6 +105,24 @@ These class names are applied to the root and selected by the Style Settings `cl
 - `!important` is used deliberately to defend against host-injected dynamic variables (Obsidian Live Preview / CodeMirror overrides `--font-monospace`, etc.), and to guarantee hover color behavior on H1–H6.
 - **Forbidden pattern:** do NOT set `position: relative;` on `.markdown-preview.markdown-preview` — it breaks MPE's scroll-sync alignment.
 
+### Obsidian font cascade — must target `-*-theme`, not the bare `--font-*`
+
+Obsidian's built-in `app.css` declares a three-tier cascade on `body`:
+
+```
+--font-interface / --font-text / --font-monospace
+  = var(--<name>-override), var(--<name>-theme), var(--<name>-default)
+```
+
+`--<name>-override` is written by Settings → Appearance when the user picks a font; `--<name>-theme` is the slot themes are expected to fill; `--<name>-default` is the system stack. Do NOT set the bare `--font-text` / `--font-interface` / `--font-monospace` on `:root` or `body` and expect it to win — `app.css` re-declares those names on `body` at equal specificity and overrides the theme value. The global-font block at the tail of `obsidian/theme-origin.css` (the `/* Font Setup */` section) therefore:
+
+1. Sets `--font-text-theme` / `--font-interface-theme` / `--font-monospace-theme` (the slots Obsidian actually consumes).
+2. Also pins `--<name>-override` so Settings → Appearance cannot silently revert the theme font.
+3. Adds an element-selector `!important` layer on `body`, `.markdown-preview-view`, `.markdown-source-view.mod-cm6 .cm-scroller`, `.workspace-leaf-content`, and the app-chrome containers as belt-and-suspenders against plugin CSS that re-declares the cascade.
+4. Code surfaces (`code, kbd, pre, .cm-inline-code, .HyperMD-codeblock, …`) keep the monospace stack and are forced via element selector `!important` — this is why code fonts worked even when the global font did not.
+
+Cross-platform slices: this cascade is Obsidian-specific. `VSCode/Tokyonight_storm/style.less` and `cherry_studio/Tokyonight.css` set `font-family` directly on their host containers because neither host has the same three-tier variable cascade. When porting font changes, do not blindly copy the Obsidian `-*-theme` pattern into the other two files.
+
 ### `color-mix` handling
 
 - Obsidian uses native CSS `color-mix(in srgb, …)`.
