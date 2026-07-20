@@ -91,8 +91,10 @@ settings:
                 value: layout-cards
     -
         id: rainbow-folders
-        title: 启用彩虹文件夹 (Rainbow Folders)
-        description: 启用后，侧边栏文件列表将变为多彩嵌套的玻璃容器风格，并带有动态类型图标。关闭则恢复 Obsidian 默认样式。
+        title: Rainbow Folder Colors
+        title.zh: 彩虹文件夹颜色
+        description: Enable rainbow folder colors
+        description.zh: 开启该选项以显示彩虹文件夹颜色
         type: class-toggle
     -
         id: folder-icons
@@ -104,8 +106,10 @@ settings:
         default: true
     -
         id: bg-mix-percent
-        title: 背景色混合比例（Card模式生效）
-        description: 调整背景色中白色的混合程度（数值越大越白，默认为 90）。
+        title: Background Mix Ratio
+        title.zh: 背景混合比例
+        description: 0% pure, 100% heavy color (Restart Ob after changing)
+        description.zh: 0%纯净，100%重色（修改后需重启Ob）
         type: variable-number-slider
         default: 90
         min: 0
@@ -2872,6 +2876,7 @@ body.theme-light .markdown-source-view.mod-cm6 .cm-strikethrough:hover {
   transform: translate(-50%, -50%) rotate(180deg) scale(1.3) !important;
 }
 
+/* === Table Styles === */
 .markdown-preview-view table {
   border-collapse: separate !important;
   border-spacing: 0 !important;
@@ -3046,6 +3051,7 @@ body.theme-light .markdown-source-view.mod-cm6 .cm-strikethrough:hover {
   background-color: transparent !important
 }
 
+/* === Code Block Styles === */
 .markdown-rendered button.copy-code-button {
   top: -4px
 }
@@ -3268,6 +3274,7 @@ body.theme-dark .markdown-preview-view pre:not([class]) {
   color: var(--code-punctuation, #555) !important
 }
 
+/* === Callout Styles === */
 .callout {
   padding: 12px 16px !important;
   margin-block: 1em !important;
@@ -4291,6 +4298,7 @@ body.theme-light .markdown-source-view.mod-cm6 kbd:hover {
   border-bottom: 1px solid rgba(255, 255, 255, 0.03)
 }
 
+/* === Scrollbar Styles === */
 body {
   --scrollbar-bg: transparent;
   --scrollbar-thumb-bg: rgba(var(--mono-rgb-100), 0.1);
@@ -4341,6 +4349,7 @@ body:not(.restored-scrollbars) ::-webkit-scrollbar-thumb:active {
   display: none
 }
 
+/* === Card Layout Styles === */
 body.layout-cards:not(.is-mobile) .workspace-tabs:not(.mod-stacked) .workspace-leaf,
 body.layout-cards:not(.is-mobile) .workspace-tabs:not(.mod-stacked) .workspace-leaf-content,
 body.layout-cards:not(.is-mobile) .workspace-tabs:not(.mod-stacked) .view-header:not(.animate),
@@ -4537,6 +4546,7 @@ body.layout-cards:not(.is-phone).theme-dark .status-bar {
   transform: translate(0, -5px)
 }
 
+/* === Community Plugin Modals === */
 .community-modal-meta {
   display: grid;
   grid-template-areas: "name name name name" "desc desc desc desc" "downloads version author updated" "repo repo repo repo" "buttons buttons buttons buttons";
@@ -4740,6 +4750,7 @@ body.layout-cards:not(.is-phone).theme-dark .status-bar {
   background: transparent
 }
 
+/* === Folder & File Icons === */
 body.rainbow-folders .nav-folder {
   --nav-c-pink: #ff7096;
   --nav-c-cyan: #3db8bf;
@@ -4870,19 +4881,22 @@ body.rainbow-folders .nav-file-title:hover .nav-file-title-content::before {
   opacity: 0.9
 }
 
-body.rainbow-folders.folder-icons .nav-folder-title-content::before {
+body.rainbow-folders.folder-icons .nav-folder-title-content::before,
+body.folder-icons .nav-folder-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3C/svg%3E");
   opacity: 0.8
 }
 
-body.rainbow-folders.folder-icons .nav-folder:not(.is-collapsed)>.nav-folder-title .nav-folder-title-content::before {
+body.rainbow-folders.folder-icons .nav-folder:not(.is-collapsed)>.nav-folder-title .nav-folder-title-content::before,
+body.folder-icons .nav-folder:not(.is-collapsed)>.nav-folder-title .nav-folder-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E");
   opacity: 1
 }
 
-body.rainbow-folders .nav-file-title-content::before {
+body.rainbow-folders .nav-file-title-content::before,
+.nav-file-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E")
 }
@@ -4892,17 +4906,25 @@ body.rainbow-folders .nav-file-title[data-path$=".jpg" i] .nav-file-title-conten
 body.rainbow-folders .nav-file-title[data-path$=".jpeg" i] .nav-file-title-content::before,
 body.rainbow-folders .nav-file-title[data-path$=".gif" i] .nav-file-title-content::before,
 body.rainbow-folders .nav-file-title[data-path$=".svg" i] .nav-file-title-content::before,
-body.rainbow-folders .nav-file-title[data-path$=".webp" i] .nav-file-title-content::before {
+body.rainbow-folders .nav-file-title[data-path$=".webp" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".png" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".jpg" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".jpeg" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".gif" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".svg" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".webp" i] .nav-file-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='3' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='3' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E")
 }
 
-body.rainbow-folders .nav-file-title[data-path$=".canvas" i] .nav-file-title-content::before {
+body.rainbow-folders .nav-file-title[data-path$=".canvas" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".canvas" i] .nav-file-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='9' x='3' y='3' rx='1'/%3E%3Crect width='7' height='5' x='14' y='3' rx='1'/%3E%3Crect width='7' height='9' x='14' y='12' rx='1'/%3E%3Crect width='7' height='5' x='3' y='16' rx='1'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='9' x='3' y='3' rx='1'/%3E%3Crect width='7' height='5' x='14' y='3' rx='1'/%3E%3Crect width='7' height='9' x='14' y='12' rx='1'/%3E%3Crect width='7' height='5' x='3' y='16' rx='1'/%3E%3C/svg%3E")
 }
 
-body.rainbow-folders .nav-file-title[data-path$=".base" i] .nav-file-title-content::before {
+body.rainbow-folders .nav-file-title[data-path$=".base" i] .nav-file-title-content::before,
+.nav-file-title[data-path$=".base" i] .nav-file-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='9' ry='3'/%3E%3Cpath d='M3 5V19A9 3 0 0 0 21 19V5'/%3E%3Cpath d='M3 12A9 3 0 0 0 21 12'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='9' ry='3'/%3E%3Cpath d='M3 5V19A9 3 0 0 0 21 19V5'/%3E%3Cpath d='M3 12A9 3 0 0 0 21 12'/%3E%3C/svg%3E")
 }
@@ -5005,32 +5027,6 @@ body.folder-icons .nav-folder .collapse-icon {
   display: none !important
 }
 
-body.folder-icons .nav-folder-title-content::before,
-.nav-file-title-content::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  vertical-align: text-bottom;
-  background-color: currentColor;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  transition: transform 0.2s ease, opacity 0.2s ease
-}
-
-.nav-file-title-content::before {
-  width: 14px;
-  height: 14px;
-  opacity: 0.6
-}
-
-.nav-file-title:hover .nav-file-title-content::before {
-  opacity: 0.9
-}
-
 body.folder-icons .nav-folder-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3C/svg%3E");
@@ -5043,11 +5039,36 @@ body.folder-icons .nav-folder:not(.is-collapsed)>.nav-folder-title .nav-folder-t
   opacity: 1
 }
 
+body.folder-icons .nav-file-title-content::before,
 .nav-file-title-content::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: text-bottom;
+  background-color: currentColor;
+  opacity: 0.6;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E")
 }
 
+body.folder-icons .nav-file-title:hover .nav-file-title-content::before,
+.nav-file-title:hover .nav-file-title-content::before {
+  opacity: 0.9
+}
+
+body.folder-icons .nav-file-title[data-path$=".png" i] .nav-file-title-content::before,
+body.folder-icons .nav-file-title[data-path$=".jpg" i] .nav-file-title-content::before,
+body.folder-icons .nav-file-title[data-path$=".jpeg" i] .nav-file-title-content::before,
+body.folder-icons .nav-file-title[data-path$=".gif" i] .nav-file-title-content::before,
+body.folder-icons .nav-file-title[data-path$=".svg" i] .nav-file-title-content::before,
+body.folder-icons .nav-file-title[data-path$=".webp" i] .nav-file-title-content::before,
 .nav-file-title[data-path$=".png" i] .nav-file-title-content::before,
 .nav-file-title[data-path$=".jpg" i] .nav-file-title-content::before,
 .nav-file-title[data-path$=".jpeg" i] .nav-file-title-content::before,
@@ -5058,11 +5079,13 @@ body.folder-icons .nav-folder:not(.is-collapsed)>.nav-folder-title .nav-folder-t
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='3' rx='2' ry='2'/%3E%3Ccircle cx='9' cy='9' r='2'/%3E%3Cpath d='m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21'/%3E%3C/svg%3E")
 }
 
+body.folder-icons .nav-file-title[data-path$=".canvas" i] .nav-file-title-content::before,
 .nav-file-title[data-path$=".canvas" i] .nav-file-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='9' x='3' y='3' rx='1'/%3E%3Crect width='7' height='5' x='14' y='3' rx='1'/%3E%3Crect width='7' height='9' x='14' y='12' rx='1'/%3E%3Crect width='7' height='5' x='3' y='16' rx='1'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='9' x='3' y='3' rx='1'/%3E%3Crect width='7' height='5' x='14' y='3' rx='1'/%3E%3Crect width='7' height='9' x='14' y='12' rx='1'/%3E%3Crect width='7' height='5' x='3' y='16' rx='1'/%3E%3C/svg%3E")
 }
 
+body.folder-icons .nav-file-title[data-path$=".base" i] .nav-file-title-content::before,
 .nav-file-title[data-path$=".base" i] .nav-file-title-content::before {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='9' ry='3'/%3E%3Cpath d='M3 5V19A9 3 0 0 0 21 19V5'/%3E%3Cpath d='M3 12A9 3 0 0 0 21 12'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='9' ry='3'/%3E%3Cpath d='M3 5V19A9 3 0 0 0 21 19V5'/%3E%3Cpath d='M3 12A9 3 0 0 0 21 12'/%3E%3C/svg%3E")
