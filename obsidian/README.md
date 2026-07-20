@@ -22,11 +22,13 @@
 
 ## 🔤 字体配置
 
-安装以下字体即可，无需在 Obsidian 中额外设置：
+推荐安装以下字体以获得最佳体验。安装后，本主题会在三种模式（阅读、实时预览、源码）和 UI 界面下强制全局生效：
 
 1.  全局字体：[LXGW ZhenKai GB](https://github.com/lxgw/LxgwZhenKai)
 2.  代码字体：[ComicShannsMono Nerd Font](https://www.nerdfonts.com/font-downloads)（英文/数字）+ LXGW ZhenKai GB（中文）
 3.  公式字体：保持 Obsidian 默认 KaTeX 渲染
+
+> **注**：主题利用了特殊的变量穿透技术锁定全局字体，因此**无需（且不建议）在 Obsidian 设置面板 (Appearance) 中额外选择字体**。
 
 ---
 
