@@ -21,9 +21,6 @@ obsidian/build_theme.py  ───┤
               obsidian/theme.css   (Obsidian ships this)
 
 VSCode/Tokyonight_storm/style.less   (manual; VSCode/Less compiles)
-VSCode/Tokyonight_storm/config.js    (MPE katex/mathjax/mermaid config)
-VSCode/Tokyonight_storm/parser.js    (MPE onWillParse/onDidParse hooks)
-VSCode/Tokyonight_storm/head.html    (injected into preview <head>)
 
 cherry_studio/Tokyonight.css         (manual; only editable Cherry Studio file)
 cherry_studio/Claude.css             ┐
@@ -50,9 +47,6 @@ cherry_studio/(others).css           ┘
 | `obsidian/README.md` | User-facing readme (Chinese display text + emoji-friendly). |
 | `VSCode/Tokyonight_storm/` | VSCode MPE port. `.less` not `.css`. |
 | `VSCode/Tokyonight_storm/style.less` | Main file. Root selector `.markdown-preview.markdown-preview`. |
-| `VSCode/Tokyonight_storm/config.js` | KaTeX/MathJax/Mermaid config passed to MPE. |
-| `VSCode/Tokyonight_storm/parser.js` | MPE `onWillParseMarkdown` / `onDidParseMarkdown` no-op hooks. |
-| `VSCode/Tokyonight_storm/head.html` | `<head>` injection (currently a DOMContentLoaded stub). |
 | `cherry_studio/Tokyonight.css` | **The only editable Cherry Studio file.** `.markdown` / `.tiptap` selectors + `@media (prefers-color-scheme)`. |
 | `cherry_studio/Claude.css`, `Miku-more.css`, `Modern_Workspace.css`, `universe.css`, `vscode.css`, `奶油国风Mac代码块.css`, `粉紫色.css`, `赛博飞升·霓虹毛玻璃满配版.css` | READ-ONLY references for cherry-picked patterns. **Do not edit.** |
 | `markdown元素对照/MD元素设置对照.md` | Element-by-element behavior reference (callouts, lists, code, tables, math). |
