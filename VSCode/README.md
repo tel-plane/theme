@@ -7,9 +7,6 @@
 ## 📂 文件说明
 
 *   `style.less` — 主题样式源码，采用 LESS 编写。包含霓虹灯发光特效、✦ 星芒分割线、以及专门针对 MPE 优化的 markdown 样式。
-*   `config.js` — MPE 预览中 KaTeX、MathJax 及 Mermaid 图表的配置脚本。
-*   `parser.js` — MPE 渲染生命周期钩子（onWillParseMarkdown / onDidParseMarkdown）。
-*   `head.html` — 注入到预览 HTML `<head>` 里的头部文件。
 
 ---
 
@@ -23,7 +20,6 @@
    * **MPE 全局配置文件夹路径参考**：
        * Windows: `~/.crossnote/`
        * Linux / WSL: `~/.local/state/crossnote/`
-       * 如果你想修改 `config.js`、`head.html`、`parser.js` 等配置，可以直接在上述目录中找到对应的同名文件进行局部调整；无需手动复制覆盖，复用 MPE 的现存空文件即可。
 
 2. **替换样式内容**：
    * 复制本目录下 `style.less` 的全部内容，直接粘贴并覆盖到上一步打开的全局 `style.less` 文件中即可。
