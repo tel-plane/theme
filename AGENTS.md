@@ -207,5 +207,7 @@ Cross-platform slices: this cascade is Obsidian-specific. `VSCode/Tokyonight_sto
 - Edits to CSS/LESS/Python: English comments only, professional tone, no in-character language.
 - Cross-platform changes: if you change a design rule in one theme, mirror it in the other two (the user expects all three platforms to remain visually consistent — `translateX(4px)`, `✦` hr, KaTeX lift, etc.).
 - If you touch `theme-origin.css`, run `python obsidian/build_theme.py` afterwards and verify `theme.css` still matches. Never hand-edit `theme.css` directly.
+- **Python constraints:** `build_theme.py` must stay pure Python stdlib. Do not add third-party dependencies (no requests, no beautifulsoup).
+- **CSS hygiene:** Keep massive base64 SVG chunks deduplicated (e.g., share mask-images via `.folder-icons` parent classes). Insert `/* === Section === */` structural headers before new 100+ line blocks.
 - If you think the user wants to break a convention (e.g. add `authorUrl`, edit a read-only reference file, change `UNIFIED_KEYS` ordering), push back with the rule name from this file and confirm before acting.
 - Workspace is on Windows (`win32`); use forward slashes in paths when calling tools.
